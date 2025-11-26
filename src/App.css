@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: #06151a;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  background: linear-gradient(180deg, #17e4b9 0%, #091d24 100%);
+  display: flex;
+  justify-content: center;
+}
+
+section img {
+  max-width: 90%;
+}
+
+.form-evento {
+  background-color: #212121;
+  padding: 2rem 1.75rem;
+  border-radius: 16px;
+  width: 324px;
+  max-width: 90%;
+  margin: 4rem auto;
+}
