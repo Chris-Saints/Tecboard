@@ -38,7 +38,7 @@ export function App() {
 
   const [eventos, setEventos] = useState([
     {
-      capa: '../public/Imagem1.svg',
+      capa: '../Imagem1.svg',
       tema: temas[0],
       data: new Date(),
       titulo: 'Mulheres no front',
