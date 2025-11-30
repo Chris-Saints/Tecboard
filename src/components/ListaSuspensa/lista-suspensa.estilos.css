@@ -4,6 +4,10 @@
     border: 1px solid #4a4949;
     font-weight: 400;
     line-height: 120%;
-    color: #fff;
+    color: #ffffff;
     padding: 8px 16px;
+}
+
+.option {
+    color: #212121;
 }

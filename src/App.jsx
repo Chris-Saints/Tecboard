@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import { Banner } from './components/Banner'
 import { CardEvento } from './components/CardEvento'
@@ -5,6 +6,7 @@ import { FormularioDeEvento } from './components/FormularioDeEventos'
 import { Tema } from './components/Tema'
 
 export function App() {
+
 
   const temas = [
     {
@@ -32,8 +34,9 @@ export function App() {
       nome: 'cloud'
     }
   ]
+ 
 
-  const eventos = [
+  const [eventos, setEventos] = useState([
     {
       capa: '../public/Imagem1.svg',
       tema: temas[0],
@@ -41,7 +44,13 @@ export function App() {
       titulo: 'Mulheres no front',
       descricao: 'Valorizando e impulsionando a participação feminina no desenvolvimento front-end.'
     }
-  ]
+  ])
+
+  function adicionarEvento(evento) {
+
+
+    setEventos([...eventos, evento]);
+  } 
 
 
   return (
@@ -52,14 +61,15 @@ export function App() {
 
       <Banner />
 
-      <FormularioDeEvento />
+      <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
 
       {temas.map(function (item) {
         return (
           <section key={item.id}>
             <Tema tema={item}/>
-
-            <CardEvento evento={eventos[0]} />
+            {eventos.map(function(item, index) {
+              return <CardEvento evento={item} key={index} />
+            })}
           </section>
         )
       })} 
